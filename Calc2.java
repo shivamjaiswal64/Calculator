@@ -16,7 +16,8 @@ class Calc2 implements ActionListener{
 		tf1.setBounds(50,80,300,40);
 		f.add(tf);
 		f.add(tf1);
-	
+		f.addWindowListener(new WindowActionListener());
+		
 		String[][] but={{"%","sq.root","x^2","1/x"},
 						{"CE","C","<X]","/"},
 						{"7","8","9","X"},
@@ -199,5 +200,14 @@ class Calc2 implements ActionListener{
 
  	public static void main(String[] args) {
 		new Calc2("Calculator");
+	}
+}
+
+
+
+class WindowActionListener extends WindowAdapter{
+	public void windowClosing(WindowEvent e){
+		System.out.println("Window Closed");
+		System.exit(0);
 	}
 }
